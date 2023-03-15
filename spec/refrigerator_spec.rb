@@ -53,4 +53,8 @@ describe 'A refrigerator' do
 		expect(@refrigerator.freezer.temperature).to eq 60
 	end
 
+	it 'can display refrigerator info as a string' do
+		expect(@refrigerator.to_s).to eq "Power: off\nStorage: 200 of 200 available\nTemps: Chiller is 70, Freezer is 70\nWater: Reservoir has 0 remaining.\n"
+	end
+
 end
