@@ -20,7 +20,12 @@ describe 'A freezer' do
 	it 'can turn power off' do
 		@freezer.turn_off
 		expect(@freezer.power).to eq :off
-	end	
+	end
+
+	it 'can add items' do
+		@freezer.add('item')
+		expect(@freezer.contents).to include('item')
+	end
 
 
 end
