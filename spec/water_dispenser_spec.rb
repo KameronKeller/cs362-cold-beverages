@@ -12,7 +12,14 @@ describe 'A water dispenser' do
 		expect(dispenser.reservoir).to be_an_instance_of WaterReservoir
 	end
 
-	it 'can dispense into a vessel' do
+	it 'will only despense up to the available amount of water in the reservoir' do
+		reservoir = WaterReservoir.new(10, 0)
+		dispenser = WaterDispenser.new(reservoir)
+		vessel = Vessel.new('TestVessel', 5)
+		expect(dispenser.dispense(vessel)).to eq 0
+	end
+
+	it 'will fill a vessel with dispense if the reservoir has enough water' do
 		reservoir = WaterReservoir.new(10, 10)
 		dispenser = WaterDispenser.new(reservoir)
 		vessel = Vessel.new('TestVessel', 5)
