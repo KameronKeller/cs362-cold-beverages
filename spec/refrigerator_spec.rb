@@ -17,7 +17,8 @@ describe 'A refrigerator' do
 	end
 
 	it 'can freeze an item' do
-
+		@refrigerator.freeze(@item)
+		expect(@refrigerator.freezer.contents).to include(@item)
 	end
 
 end
