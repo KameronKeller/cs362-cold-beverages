@@ -24,4 +24,8 @@ describe 'A refrigerator' do
 	it 'can return the total capacity' do
 		expect(@refrigerator.total_capacity).to eq 200
 	end
+
+	it 'can return the remaining capacity' do
+		expect(@refrigerator.total_capacity).to eq 200
+	end
 end
