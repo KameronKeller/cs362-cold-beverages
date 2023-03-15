@@ -7,6 +7,7 @@ class WaterDispenser
   end
 
   def dispense(vessel)
+    vessel.fill
     if reservoir.current_water_volume < vessel.volume
       reservoir.drain(reservoir.current_water_volume)
     else
