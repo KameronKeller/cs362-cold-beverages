@@ -27,5 +27,15 @@ describe 'A freezer' do
 		expect(@freezer.contents).to include('item')
 	end
 
+	it 'can return remaining capacity' do
+		item = Item.new('test', 1)
+		@freezer.add(item)
+		expect(@freezer.remaining_capacity).to eq 99
+	end
+
+	it 'can set temperature level' do
+		@freezer.set_level(1)
+		expect(@freezer.temperature).to eq 60
+	end
 
 end
