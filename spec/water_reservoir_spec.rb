@@ -8,4 +8,9 @@ describe 'A water reservoir' do
 		expect(reservoir.current_water_volume).to eq 0
 	end
 
+	it 'is empty when current_water_volume is 0' do
+		reservoir = WaterReservoir.new(0, 0)
+		expect(reservoir).to be_empty
+	end
+
 end
