@@ -35,4 +35,11 @@ describe 'A refrigerator' do
 		expect(@refrigerator.chiller.power).to eq :on
 		expect(@refrigerator.freezer.power).to eq :on
 	end
+
+	it 'can be unplugged' do
+		@refrigerator.unplug
+		expect(@refrigerator.power).to eq :off
+		expect(@refrigerator.chiller.power).to eq :off
+		expect(@refrigerator.freezer.power).to eq :off
+	end
 end
