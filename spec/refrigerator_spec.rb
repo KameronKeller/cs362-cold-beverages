@@ -28,4 +28,11 @@ describe 'A refrigerator' do
 	it 'can return the remaining capacity' do
 		expect(@refrigerator.total_capacity).to eq 200
 	end
+
+	it 'can be plugged in' do
+		@refrigerator.plug_in
+		expect(@refrigerator.power).to eq :on
+		expect(@refrigerator.chiller.power).to eq :on
+		expect(@refrigerator.freezer.power).to eq :on
+	end
 end
